@@ -199,14 +199,14 @@ For the AWS deploy, we will use terraform as IaC (Infrastructure As Code) tool t
             "Version": "2012-10-17",
             "Statement": [
                 {
-                "Effect": "Allow",
-                "Action": "s3:ListBucket",
-                "Resource": "arn:aws:s3:::mybucket"
+                    "Effect": "Allow",
+                    "Action": "s3:ListBucket",
+                    "Resource": "arn:aws:s3:::mybucket"
                 },
                 {
-                "Effect": "Allow",
-                "Action": ["s3:GetObject", "s3:PutObject"],
-                "Resource": "arn:aws:s3:::mybucket/path/to/my/key"
+                    "Effect": "Allow",
+                    "Action": ["s3:GetObject", "s3:PutObject"],
+                    "Resource": "arn:aws:s3:::mybucket/path/to/my/key"
                 }
             ]
         }
@@ -259,7 +259,6 @@ Project Link: [https://github.com/thecrux4020/telegram-bot](https://github.com/t
 [issues-shield]: https://img.shields.io/github/issues/thecrux4020/telegram-bot.svg?style=for-the-badge
 [issues-url]: https://github.com/thecrux4020/telegram-bot/issues
 [license-shield]: https://img.shields.io/github/license/thecrux4020/telegram-bot.svg?style=for-the-badge
-[license-url]: https://github.com/thecrux4020/telegram-bot/blob/master/LICENSE.txt
+[license-url]: https://github.com/thecrux4020/telegram-bot/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://github.com/thecrux4020/telegram-bot
-<!-- [product-screenshot]: images/screenshot.png -->
+[linkedin-url]: www.linkedin.com/in/leandro-mantovani
