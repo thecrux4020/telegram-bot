@@ -258,7 +258,7 @@ Project Link: [https://github.com/thecrux4020/telegram-bot](https://github.com/t
 [stars-url]: https://github.com/thecrux4020/telegram-bot/stargazers
 [issues-shield]: https://img.shields.io/github/issues/thecrux4020/telegram-bot.svg?style=for-the-badge
 [issues-url]: https://github.com/thecrux4020/telegram-bot/issues
-[license-shield]: https://img.shields.io/github/license/thecrux4020/telegram-bot.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/thecrux4020/telegram-bot?style=for-the-badge
 [license-url]: https://github.com/thecrux4020/telegram-bot/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: www.linkedin.com/in/leandro-mantovani
+[linkedin-url]: https://www.linkedin.com/in/leandro-mantovani
