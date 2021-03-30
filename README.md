@@ -66,7 +66,7 @@
     <img src="images/how-it-works.png" alt="how-it-works">
 </p>
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-The bot supports 2 different operational modes, _jobs_ and _webhooks_:
+The bot supports 2 different operational modes, <em>jobs</em> and <em>webhooks</em>:
 
 * **Jobs** is designed to run specific tasks, like a crontab job in linux, but the example above is a serverless job. 
 * **Webhooks** is designed to handle events (messages, audios, images, etc) from telegram. When something happens in the channel, or someone send something to the bot.
@@ -95,6 +95,8 @@ The job has a dynamodb table where job manager (you!) store all the questions th
 
 The table has a field calle `has_been_used`; this field is used to avoid send the same question multiple times. The lambda function selects a question randomly, and after send to the channel, mark the question as used.
 
+To know which job will run, you have to configure an environment variable called `JOB_NAME` (for example, JOB_NAME=POLL). In this way, we could create multiple lambda function with the same code for all of functions, but at deploy time we configure the environment variable to specify which job will run inside de lambda function.
+
 ___
 
 ### Infrastructure
@@ -120,6 +122,103 @@ ___
 - `settings.ini`: _configuration file_
 - `main.py`: _main file of the app, all setup stuff of python app_
 - `requirements.txt`: _dependencies file_
+
+___
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+Here we go! 
+
+lets see the steps to install and run the project...
+
+___
+
+### Prerequisites
+
+First of all, we need to install python and pip. After that, we could use virtualenv to install all dependencies inside virtualenv.
+
+- Install pip
+```sh
+sudo apt-get install python3-pip
+```
+- Install virtualenv
+```sh
+sudo pip3 install virtualenv 
+```
+
+- Create a telegram bot and join to channel
+    - <a href="https://core.telegram.org/bots#6-botfather">How to setup telegram bot</a>
+
+___
+
+
+### Installation
+
+The steps described here are for running the project **locally**, if you want to run it inside AWS, see <a href="#deploy-on-aws">deploy on AWS</a>
+
+1. Clone the repository
+```sh
+git clone https://github.com/thecrux4020/telegram-bot
+```
+
+2. Now create virtualenv in the venv directory
+```sh
+virtualenv -p python3 venv 
+```
+3. Activate the virtual environment
+```sh
+source venv/bin/activate
+```
+
+4. Install all dependecies
+```sh
+pip3 install -r requirements.txt
+```
+
+5. Configure environment variables
+```sh
+export JOB_NAME=POLL && export TELEGRAM_TOKEN=mytoken
+```
+replace \"*__mytoken__*\" with the token obtained from telegram bot setup
+
+6. Replace channel_id and table_name in `settings.ini` file, with your parameters.
+
+___
+
+### Deploy on AWS
+
+For the AWS deploy, we will use terraform as IaC (Infrastructure As Code) tool to deploy the bot in AWS.
+
+1. <a href="https://learn.hashicorp.com/tutorials/terraform/install-cli">Install terraform </a>
+2. Create bucket to save terraform state: <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html">How to create bucket on AWS </a>
+
+3. Grant s3 permission to your actual IAM user:
+     ```
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                "Effect": "Allow",
+                "Action": "s3:ListBucket",
+                "Resource": "arn:aws:s3:::mybucket"
+                },
+                {
+                "Effect": "Allow",
+                "Action": ["s3:GetObject", "s3:PutObject"],
+                "Resource": "arn:aws:s3:::mybucket/path/to/my/key"
+                }
+            ]
+        }
+    ```
+4. Initialize terraform
+    ```sh
+    terraform init
+    ```
+5. Deploy changes in AWS (your user must have permissions to create resources)
+    ```sh
+    terraform apply
+    ```
 
 ___
 
