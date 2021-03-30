@@ -46,14 +46,14 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#deploy-on-aws">Deploy on AWS</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <!-- <li><a href="#acknowledgements">Acknowledgements</a></li> -->
   </ol>
 </details>
 
@@ -220,16 +220,10 @@ For the AWS deploy, we will use terraform as IaC (Infrastructure As Code) tool t
     terraform apply
     ```
 
-___
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/thecrux4020/telegram-bot/issues) for a list of proposed features (and known issues).
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -242,34 +236,30 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_linkedin](https://www.linkedin.com/in/leandro-mantovani-%E2%98%81%EF%B8%8F%F0%9F%94%90-49819a119/) - leandro.mantovani93@gmail.com
+Leandro Mantovani - leandro.mantovani93@gmail.com
 
 Project Link: [https://github.com/thecrux4020/telegram-bot](https://github.com/thecrux4020/telegram-bot)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/thecrux4020/telegram-bot.svg?style=for-the-badge
 [contributors-url]: https://github.com/thecrux4020/telegram-bot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/thecrux4020/telegram-bot.svg?style=for-the-badge
 [forks-url]: https://github.com/thecrux4020/telegram-bot/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/thecrux4020/telegram-bot.svg?style=for-the-badge
 [stars-url]: https://github.com/thecrux4020/telegram-bot/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/thecrux4020/telegram-bot.svg?style=for-the-badge
 [issues-url]: https://github.com/thecrux4020/telegram-bot/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/thecrux4020/telegram-bot.svg?style=for-the-badge
 [license-url]: https://github.com/thecrux4020/telegram-bot/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://github.com/thecrux4020/telegram-bot
-[product-screenshot]: images/screenshot.png
+<!-- [product-screenshot]: images/screenshot.png -->
