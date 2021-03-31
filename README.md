@@ -91,17 +91,18 @@ Example:
     <img src="images/quiz.jpeg" alt="quiz-example-telegram" width=500 height=300>
 </p>
 
-The job has a dynamodb table where job manager (you!) store all the questions that want to send to the channel. With the help of a cloudwatch rule lambda function trigger in a specific time of the day, take one question from the dynamodb table, send it to the channel and update the status of the quiz.
+The job has a dynamodb table where job manager (you!) store all the questions that want to send to the channel. With the help of a cloudwatch rule, the lambda function trigger in a specific time of the day, take one question from the dynamodb table, send it to the channel and update the status of the quiz.
 
-The table has a field calle `has_been_used`; this field is used to avoid send the same question multiple times. The lambda function selects a question randomly, and after send to the channel, mark the question as used.
+The table has a field calle `has_been_used`; this field is used to avoid send the same question multiple times. The lambda function selects a question randomly, and then sends it to the channel; finally, it marks the question as used.
 
-To know which job will run, you have to configure an environment variable called `JOB_NAME` (for example, JOB_NAME=POLL). In this way, we could create multiple lambda function with the same code for all of functions, but at deploy time we configure the environment variable to specify which job will run inside de lambda function.
+To know which job will run, you have to configure an environment variable called `JOB_NAME` (for example, ```JOB_NAME=POLL```). In this way, we could create multiple lambda function with the same code for all of functions, but at **deploy time** we configure the environment variable to specify which job will run inside de lambda function.
 
 ___
 
 ### Infrastructure
 
-Inside iac/ path, you'll find the **terraform** files needed to deploy the infrastructure inside AWS, but if you want, you can host the bot wherever you like; You just need to adjust the config file and run `main.py`, like other python apps (don't forget installing dependencies and setting environment variables).
+Inside `iac/` directory, you'll find the **terraform** files needed to deploy the infrastructure inside AWS, but if you want, you can host the bot wherever you like. 
+You just need to adjust the config file and run `main.py`, like other python apps (don't forget installing dependencies and setting environment variables).
 
 ___
 
