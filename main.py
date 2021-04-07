@@ -1,23 +1,12 @@
 import telegram
 import os
-import logging
-import configparser
 
 from app.jobs.polls import Poll
+from app.helpers import setup_logging, get_config
+
 
 DEFAULT_CONFIG_NAME = "settings.ini"
 bot = channel_id = config = None
-
-def setup_logging():
-    """ Basic logging setup """
-    logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        level=logging.INFO)
-    
-def get_config():
-    """ Read configuration file, and returns a configparser object """
-    conf = configparser.ConfigParser()
-    conf.read(DEFAULT_CONFIG_NAME)
-    return conf
 
 def should_start_webhook(operation_mode):
     """ Check if operation mode is webhook, and returns True or False """
@@ -54,7 +43,7 @@ def main():
 
     # Other common parameters, get from config file
     global config
-    config = get_config()
+    config = get_config(DEFAULT_CONFIG_NAME)
     global channel_id
     channel_id = config["telegram"]["channel_id"]
     operation_mode = config["app"]["operation_mode"]
