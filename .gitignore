@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#terraform files
+# terraform files
 .terraform*
+
+# Internal files used in scripts
+questions.json
